@@ -1,0 +1,47 @@
+﻿@model IEnumerable<todo.Models.Item>
+
+@{
+    ViewBag.Title = "Datazooo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mis Datazooos</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+          Tema
+        </th>
+        <th>
+           ¿Completado?
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Completed)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Ver mas", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+    <button type="button" class="btn btn-default">@Html.ActionLink("Agregar Algo...", "Create")</button>
+</p>

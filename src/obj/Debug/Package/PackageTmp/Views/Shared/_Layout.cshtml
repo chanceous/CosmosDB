@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Super Hyper mega DEMO</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                @Html.ActionLink("Datazooo", "Index", "Item", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                 
+   
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear un Datazooo", "Create")</li>
+                            <li><a href="http://www.christopher-chance.com">Ver Sitio Web de Christopher</a></li>
+                            <li><a href="http://www.yourspeaker.net">Registrarse en YourSpeaker</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              
+                    
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.christopher-chance.com">Sitio Web</a></li>
+                    <li><a href="https://www.linkedin.com/in/chrischance67/">Linkedin</a></li>
+                    <li><a href="https://twitter.com/chrischance67">Twitter</a></li>
+                    <li><a href="mailto:christopherchance67@gmail.com">E-mail</a></li>
+                 
+                </ul>
+            </div>
+        </div>
+        </nav>
+    <div class="jumbotron" style=" background: url(https://goo.gl/32Bq6K) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+        <center>
+            <h1 style="color:white">Bienvenido!</h1>
+            <p style="color:white">Ahora Podes Organizarte Mas...</p>
+        </center>
+    </div>
+    <div class="container body-content">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @RenderBody()
+            </div>
+        </div>
+        <br />
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <center>
+                    <h1>Gracias!!</h1>
+                </center>
+            </div>
+        </div>
+        <br />
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Christopher Chance</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
